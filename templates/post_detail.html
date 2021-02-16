@@ -2,7 +2,8 @@
 
 {% block content %}
   <div class="post-entry">
-    <h2>{{ Cintia.title }}</h2>
-    <p>{{ Cintia.body }}</p>
+    <h2>{{ post.title }}</h2>
+    <p>{{ post.body }}</p>
   </div>
+    <a href="{% url 'post_edit' post.pk %}">+ Editar Post</a>
 {% endblock content %}
