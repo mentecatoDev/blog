@@ -16,8 +16,17 @@ Source+Sans+Pro:400" rel="stylesheet">
 			<a href="{% url 'post_new' %}">+ Nuevo Blog Post</a>
 		</div>
 	  </header>
+        {% if user.is_authenticated %}
+            <p>¡Hola {{ user.username }}!</p>
+            <p><a href="{% url 'logout' %}">logout</a></p>
+        {% else %}
+            <p>No estás logueado</p>
+            <a href="{% url 'login' %}">login</a>
+        {% endif %}
+
 	  {% block content %}
 	  {% endblock content %}
+
 	</div>
   </body>
 </html>
